@@ -1,5 +1,5 @@
 import path from 'path';
-import fs from 'fs/promises'; // Importa fs con soporte para promesas
+import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -63,7 +63,22 @@ class TicketControl {
     }
   }
 
+  reiniciarSistema() {
+    this.ultimo = 0;
+    this.hoy = new Date().getDate();
+    this.tickets = [];
+    this.ultimos4 = [];
+    this.guardarDB(); 
+  }
+
   siguiente() {
+    const limiteTickets = 50;
+
+    if (this.ultimo >= limiteTickets) {
+      this.reiniciarSistema();
+      return 'Se ha alcanzado el límite de tickets. El sistema ha sido reiniciado.';
+    }
+
     this.ultimo += 1;
     const ticket = new Ticket(this.ultimo, null);
     this.tickets.push(ticket);
@@ -73,7 +88,6 @@ class TicketControl {
   }
 
   atenderTicket(escritorio) {
-    // No tenemos tickets
     if (this.tickets.length === 0) {
       return null;
     }
