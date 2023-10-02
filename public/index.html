@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Programa de tickets</title>
-
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
-<body class="container">
+<body class="contenedor">
     <h1 class="mt-5">Programa de tickets</h1>
 
     <div class="row">
         <div class="col-6">
-
             <a class="btn btn-primary" href="publico.html" target="_blank">Pantalla publica</a>
             <a class="btn btn-secondary" href="nuevo-ticket.html" target="_blank">Crear nuevo ticket</a>
 
@@ -42,5 +41,41 @@
     }
 
 </script>
-
+<style>
+    .contenedor{
+        background-color: #119DA4;
+        margin-left: 30px;
+        width: 96%;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        font-weight:900;
+        height: 20%;
+        top: 20%;
+    }
+    a{
+        margin-left: 10%;
+       
+    }
+    input , button{
+        margin-left: -12%;
+    }
+    input{
+        width: 0%;
+    }
+    .col-6{
+        width: 50%;
+    }
+    .btn.btn-primary{
+        background-color: #040404;
+    }
+    .btn.btn-secondary{
+        background-color: #D7D9CE;
+        color: #040404;
+    }
+    #escritorio{
+        background-color: #D7D9CE;
+    }
+</style>
 </html>
